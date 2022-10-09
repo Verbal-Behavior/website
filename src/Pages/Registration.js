@@ -5,19 +5,20 @@ import { FaGitAlt } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 
 
-function Login() {
+function Registration() {
     return(
 <div class="container">
 <div class="forms-container">
     <div class="signin-signup">
         <form action="#" class="sign-in-form">
-            <h2 class="title">Sign in</h2>
+            <h2 class="title">Registration</h2>
             <div class="input-field">
-                
                 <input type="text" placeholder="Username"/>
                 </div>
+            <div class="input-field">
+                <input type="text" placeholder="Email"/>
+            </div>
                 <div class="input-field">
-                
                     <input type="password" placeholder="Password"/>    
             </div>
             <input type="submit" class="btn solid" value="Login"/>
@@ -43,4 +44,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default Registration;
