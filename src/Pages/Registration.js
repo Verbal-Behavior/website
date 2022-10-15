@@ -44,33 +44,36 @@ function Registration() {
                     type="text" 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email"/>
+                    placeholder="Email"
+                />
             </div>
             <div class="input-field">
                 <input 
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Password"/>    
+                    placeholder="Password"
+                />    
             </div>
                 <input 
                     type="button" 
                     class="btn solid" 
                     onClick={register} 
-                    value="Register"/>
+                    value="Register"
+                />
             <div class="social-media">
-            <a href="#" class="social-icon">
-            <FaFacebookF />
-            </a>
-            <a href="#" class="social-icon">
-            <FaDiscord />
-            </a>            
-            <a href="#" class="social-icon">
-            <FaGoogle />
-            </a>
-            <a href="#" class="social-icon">
-            <FaGitAlt />
-            </a>            
+                <a href="#" class="social-icon">
+                    <FaFacebookF />
+                </a>
+                <a href="#" class="social-icon">
+                    <FaDiscord />
+                </a>            
+                <a href="#" class="social-icon">
+                    <FaGoogle />
+                </a>
+                <a href="#" class="social-icon">
+                    <FaGitAlt />
+                </a>            
             </div>
         </form>
     </div>
