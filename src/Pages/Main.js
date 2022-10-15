@@ -1,6 +1,8 @@
-import './Main.css'
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import Login from './Login';
+import Registration from './Registration';
+import Profile from './Profile';
 import './style.css';
 import image from './images/stars.png';
 import image2 from './images/moon.png';
@@ -12,12 +14,16 @@ function Main() {
 <body>
         <header>
             <a href="#" class="logo">logo</a>
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+            <div>
+      <main>
+        <Routes>
+          <Route path='/Login' element={<Login />} />
+          <Route path='/Registration' element={<Registration />} />
+          <Route path='/Profile' element={<Profile />} />
+          <Route path='/Main' element={<Main />} />
+        </Routes>
+      </main>
+    </div>
         </header>
     <section>
         <img src={image} id="stars"/>
