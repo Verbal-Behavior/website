@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './Login';
 import Registration from './Registration';
 import Profile from './Profile';
-import './Main.css';
+import './style.css';
 
 function Main() {
     return(
@@ -12,9 +12,9 @@ function Main() {
             <a href="#" class="ProfileIcon">ProfileIcon</a>
             <ul>
                 <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Registration</a></li>
             </ul>
         </header>
         
