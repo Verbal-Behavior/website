@@ -30,7 +30,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-const logInWithEmailAndPassword = async (email, password) => {
+const logInWithUsernameAndPassword = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (err) {
@@ -72,7 +72,7 @@ const logout = () => {
 export {
   auth,
   db,
-  logInWithEmailAndPassword,
+  logInWithUsernameAndPassword,
   registerWithEmailAndPassword,
   //sendPasswordReset,
   logout,
