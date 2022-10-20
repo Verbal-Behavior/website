@@ -1,45 +1,41 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Login from './Login';
-import Registration from './Registration';
-import Profile from './Profile';
-import './style.css';
+import MainCSS from './Main.module.css';
+import Card from './Card';
 
 function Main() {
     return(
-<body>
-        <header>
-            <a href="#" class="ProfileIcon">ProfileIcon</a>
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Registration</a></li>
+<body className= {MainCSS.body}>
+        <header className= {MainCSS.header}>
+            <a className= {MainCSS.a} href="#" class="ProfileIcon">ProfileIcon</a>
+            <ul className= {MainCSS.ul}>
+                <li className= {MainCSS.li}><a href="#" class="active">Home</a></li>
+                <li className= {MainCSS.li}><a href="#">Profile</a></li>
+                <li className= {MainCSS.li}><a href="#">Login</a></li>
+                <li className= {MainCSS.li}><a href="#">Registration</a></li>
             </ul>
         </header>
         
-    <section>
-        <h2 data-text="Create">Create</h2>
-        <div class="planets">
-            <div id="venus"></div>
-            <div id="star1"></div>
-           <div id="star2"></div>
-           <div id="star3"></div>
-           <div id="star4"></div>
-           <div id="star5"></div>
-           <div id="star6"></div>
-           <div id="star7"></div>
-           <div id="star8"></div>
-           <div id="star9"></div>
+    <section className= {MainCSS.section}>
+        <h2 className= {MainCSS.h2} data-text="Create">Create</h2>
+        <div className= {MainCSS.planets} class="planets">
+            <div className= {MainCSS.venus} id="venus"></div>
+            <div className= {MainCSS.star1} id="star1"></div>
+           <div className= {MainCSS.star2} id="star2"></div>
+           <div className= {MainCSS.star3} id="star3"></div>
+           <div className= {MainCSS.star4} id="star4"></div>
+           <div className= {MainCSS.star5} id="star5"></div>
+           <div className= {MainCSS.star6} id="star6"></div>
+           <div className= {MainCSS.star7} id="star7"></div>
+           <div className= {MainCSS.star8} id="star8"></div>
+           <div className= {MainCSS.star9} id="star9"></div>
         </div>
-        <div id="sun"></div>
-        <div class="meteor-cont">
-           <div class="meteor-ani">
-           <div id="meteor"></div>
+        <div className= {MainCSS.sun} id="sun"></div>
+        <div className= {MainCSS.meteorcont}>
+           <div className= {MainCSS.meteorani}>
+           <div className= {MainCSS.meteor} id="meteor"></div>
         </div>
        </div>
-       <div class="stars"></div>
-    </section>     
+    </section> 
 </body>  
     );
 }

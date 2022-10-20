@@ -1,4 +1,4 @@
-@import url('https://fonts.googleleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+/*@import url('https://fonts.googleleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
 *
 {
     margin: 0;
@@ -78,16 +78,6 @@ section
     overflow: hidden;
 }
 
-section::before
-{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
-    z-index: 1000;
-}
-
 h2
 {
     position: absolute;
@@ -106,11 +96,11 @@ h2::before
     height: 100%;
     color: #ff5eac;
     /*border-right: 2px solid #ff5eac;*/
-    overflow: hidden;
+    /*overflow: hidden;
     animation: animate 8s linear infinite;
 }
 
-@keyframes animate
+/*@keyframes animate
 {
     0%,10%,100%
     {
@@ -132,7 +122,7 @@ h2::before
     box-shadow: 0px 0px 70px #ffb60d4f;
 }
 
-.meteor-cont{
+.meteorcont{
     position: absolute;
     top: 0%;
     left: 50%;
@@ -144,7 +134,7 @@ h2::before
     justify-content: center;
 }
 
-.meteor-cont #meteor{
+.meteorcont #meteor{
     height: 10vh;
     width: 10px;
     background: linear-gradient(to top, #fff 0%, transparent 80%);
@@ -155,7 +145,7 @@ h2::before
     position: relative;
 }
 
-.meteor-cont #meteor::after{
+.meteorcont #meteor::after{
     content: '';
     position: absolute;
     height: 1rem;
@@ -168,7 +158,7 @@ h2::before
     z-index: 600;
 }
 
-.meteor-ani{
+.meteorani{
     position: relative;
     top: -60%;
     left: 60%;
@@ -254,4 +244,4 @@ h2::before
 
     }
 }
-
+*/

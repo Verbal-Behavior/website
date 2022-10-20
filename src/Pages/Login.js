@@ -1,4 +1,4 @@
-import './Login_style.css'
+import LoginCSS from './Login.module.style.css'
 import { FaDiscord, FaGoogle, FaGitAlt, FaFacebookF} from "react-icons/fa";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -20,45 +20,45 @@ function Login() {
         if (user) navigate("/Profile");
       }, [user, loading]);
     return(
-<div class="container">
-<div class="forms-container">
+<div className= {LoginCSS.container} class="container">
+<div className= {LoginCSS.formscontainer} class="forms-container">
     <div class="signin-signup">
-        <form action="#" class="sign-in-form">
-            <h2 class="title">Sign in</h2>
+        <form className= {LoginCSS.form} action="#" class="sign-in-form">
+            <h2 className= {LoginCSS.h2} class="title">Sign in</h2>
             <div class="input-field">
                 
-                <input 
+                <input className= {LoginCSS.input}
                     type="text" 
                     placeholder="Username"
                     value={email}
                     onChange={(e) => setEmailName(e.target.value)}
                 />
             </div>
-             <div class="input-field">
+             <div className= {LoginCSS.inputfield} class="input-field">
                 
-                <input                     type="password"
+                <input className= {LoginCSS.input}     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Password"
                  />    
             </div>
-            <input 
+            <input className= {LoginCSS.btn}
                 type="button"
                 class="btn solid"
                 onClick={() => logInWithUsernameAndPassword(email, password)}
                 value="Login"
             />
-            <div class="social-media">
-                <a href="#" class="social-icon">
+            <div className= {LoginCSS.socialmedia} class="social-media">
+                <a className= {LoginCSS.socialicon} href="#" class="social-icon">
                     <FaFacebookF />
                 </a>
-                <a href="#" class="social-icon">
+                <a className= {LoginCSS.socialicon} href="#" class="social-icon">
                     <FaDiscord />
                 </a>            
-                <a href="#" class="social-icon">
+                <a className= {LoginCSS.socialicon} href="#" class="social-icon">
                     <FaGoogle />
                 </a>
-                <a href="#" class="social-icon">
+                <a className= {LoginCSS.socialicon} href="#" class="social-icon">
                     <FaGitAlt />
                 </a>            
             </div>
