@@ -80,7 +80,7 @@ section
 
 h2
 {
-    position: absolute;
+    position: relative;
     font-size: 10rem;
     color: black;
     text-transform: uppercase;

@@ -1,4 +1,4 @@
-import LoginCSS from './Login.module.style.css'
+import LoginCSS from './Login.module.style.css';
 import { FaDiscord, FaGoogle, FaGitAlt, FaFacebookF} from "react-icons/fa";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
