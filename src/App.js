@@ -3,7 +3,7 @@ import Login from './Pages/Login';
 import Registration from './Pages/Registration';
 import Profile from './Pages/Profile';
 import Main from './Pages/Main';
-import Card from './Pages/Card';
+import Folder from './Pages/Folder';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
           <Route path='/Registration' element={<Registration />} />
           <Route path='/Profile' element={<Profile />} />
           <Route path='/Main' element={<Main />} />
-          <Route path='/Card' element={<Card />} />
+          <Route path='/Folder' element={<Folder />} />
         </Routes>
       </main>
     </div>

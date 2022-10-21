@@ -1,6 +1,6 @@
 import React from 'react';
 import MainCSS from './Main.module.css';
-import Card from './Card';
+import Folder from './Folder';
 
 function Main() {
     return(
@@ -36,6 +36,9 @@ function Main() {
         </div>
        </div>
     </section> 
+    <div>
+        <Folder/>
+    </div>
 </body>  
     );
 }
