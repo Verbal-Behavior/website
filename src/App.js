@@ -4,6 +4,7 @@ import Registration from './Pages/Registration';
 import Profile from './Pages/Profile';
 import Main from './Pages/Main';
 import Folder from './Pages/Folder';
+import Cards from './Pages/Cards';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/Profile' element={<Profile />} />
           <Route path='/Main' element={<Main />} />
           <Route path='/Folder' element={<Folder />} />
+          <Route path='/Cards' element={<Cards />} />
         </Routes>
       </main>
     </div>
