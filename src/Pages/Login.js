@@ -1,11 +1,15 @@
 import LoginCSS from './Login.module.style.css';
-import { FaDiscord, FaGoogle, FaGitAlt, FaFacebookF} from "react-icons/fa";
+import { FaTwitter, FaGoogle, FaGitAlt, FaFacebookF} from "react-icons/fa";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import {
   auth,
-  logInWithUsernameAndPassword
+  logInWithUsernameAndPassword,
+  signInWithGoogle,
+  signInWithFacebook,
+  signInWithGithub,
+  signInWithTwitter,
 } from "../Firebase";
 
 
@@ -29,7 +33,7 @@ function Login() {
                 
                 <input className= {LoginCSS.input}
                     type="text" 
-                    placeholder="Username"
+                    placeholder="Email"
                     value={email}
                     onChange={(e) => setEmailName(e.target.value)}
                 />
@@ -50,16 +54,16 @@ function Login() {
             />
             <div className= {LoginCSS.socialmedia} class="social-media">
                 <a className= {LoginCSS.socialicon} href="#" class="social-icon">
-                    <FaFacebookF />
+                    <FaFacebookF onClick = {signInWithFacebook}/>
                 </a>
                 <a className= {LoginCSS.socialicon} href="#" class="social-icon">
-                    <FaDiscord />
+                    <FaTwitter onClick = {signInWithTwitter}/>
                 </a>            
                 <a className= {LoginCSS.socialicon} href="#" class="social-icon">
-                    <FaGoogle />
+                    <FaGoogle onClick = {signInWithGoogle}/>
                 </a>
                 <a className= {LoginCSS.socialicon} href="#" class="social-icon">
-                    <FaGitAlt />
+                    <FaGitAlt onClick = {signInWithGithub}/>
                 </a>            
             </div>
         </form>
