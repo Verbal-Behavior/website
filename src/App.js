@@ -5,6 +5,8 @@ import Profile from './Pages/Profile';
 import Main from './Pages/Main';
 import Folder from './Pages/Folder';
 import Cards from './Pages/Cards';
+import CreateCard from './Pages/CreateCard';
+import DisplayCard from './Pages/DisplayCard';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path='/Main' element={<Main />} />
           <Route path='/Folder' element={<Folder />} />
           <Route path='/Cards' element={<Cards />} />
+          <Route path='/CreateCard' element={<CreateCard />} />
+          <Route path='/DisplayCard' element={<DisplayCard />} />
         </Routes>
       </main>
     </div>
