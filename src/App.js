@@ -3,7 +3,10 @@ import Login from './Pages/Login';
 import Registration from './Pages/Registration';
 import Profile from './Pages/Profile';
 import Main from './Pages/Main';
-import Card from './Pages/Card';
+import Folder from './Pages/Folder';
+import Cards from './Pages/Cards';
+import CreateCard from './Pages/CreateCard';
+import DisplayCard from './Pages/DisplayCard';
 import Menu from './Pages/Menu';
 
 function App() {
@@ -15,7 +18,10 @@ function App() {
           <Route path='/Registration' element={<Registration />} />
           <Route path='/Profile' element={<Profile />} />
           <Route path='/Main' element={<Main />} />
-          <Route path='/Card' element={<Card />} />
+          <Route path='/Folder' element={<Folder />} />
+          <Route path='/Cards' element={<Cards />} />
+          <Route path='/CreateCard' element={<CreateCard />} />
+          <Route path='/DisplayCard' element={<DisplayCard />} />
           <Route path='/Menu' element={<Menu />} />
         </Routes>
       </main>
