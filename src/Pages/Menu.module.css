@@ -12,7 +12,6 @@
 }
 
 body {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +19,7 @@ body {
 }
 .container {
     position: relative;
-    width: 350px;
+    width: 220px;
     height: 70px;
     background: white;
     display: flex;
@@ -79,7 +78,7 @@ body {
 }
 .container .list .content:hover .animation .icon .indicator {
     position: relative;
-    top: 10;
+    top: 10px;
     width: 60px;
     height: 60px;
     background: pink;

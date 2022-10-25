@@ -1,6 +1,8 @@
 import React from 'react';
 import MenuCSS from './Menu.module.css';
-import {GoArchive, GoFileDirectory, GoBell, GoBug} from 'react-icons/go';
+import {GoCircleSlash} from 'react-icons/go';
+import {GrAddCircle,GrInstallOption} from 'react-icons/gr';
+import { Navigate } from 'react-router-dom';
 
 function Menu() {
     return (
@@ -11,40 +13,30 @@ function Menu() {
                         <a className={MenuCSS.animation} href="#">
                             <div className={MenuCSS.icon}>
                                 <div className={MenuCSS.indicator}>
-                            <GoFileDirectory />
+                                    <GrAddCircle />
+                                </div>
                             </div>
-                            </div>
-                            <h3 className={MenuCSS.text}>Test 1</h3>                           
+                            <button className={MenuCSS.text}>Create</button>
                         </a>
-                    </li>
-                    <li className={MenuCSS.content}>
-                        <a className={MenuCSS.animation} href="#">
-                            <div className={MenuCSS.icon}>
-                            <div className={MenuCSS.indicator}>
-                            <GoBug />
-                            </div>
-                            </div>
-                            <h3 className={MenuCSS.text}>Test 2</h3>
-                        </a>
-                    </li>
-                    <li className={MenuCSS.content}>
-                    <a className={MenuCSS.animation} href="#">
-                        <div className={MenuCSS.icon}>
-                            <div className={MenuCSS.indicator}>
-                                <GoBell />
-                            </div>
-                        </div>
-                        <h3 className={MenuCSS.text}>Test 3</h3>
-                    </a>
                     </li>
                     <li className={MenuCSS.content}>
                         <a className={MenuCSS.animation} href="#">
                             <div className={MenuCSS.icon}>
                                 <div className={MenuCSS.indicator}>
-                                <GoArchive />
+                                    <GoCircleSlash />
                                 </div>
                             </div>
-                            <h3 className={MenuCSS.text}>Test 4</h3>
+                            <h3 className={MenuCSS.text}>Delete</h3>
+                        </a>
+                    </li>
+                    <li className={MenuCSS.content}>
+                        <a className={MenuCSS.animation} href="#">
+                            <div className={MenuCSS.icon}>
+                                <div className={MenuCSS.indicator}>
+                                    <GrInstallOption />
+                                </div>
+                            </div>
+                            <h3 className={MenuCSS.text}>Edit</h3>
                         </a>
                     </li>
                 </ul>
@@ -52,5 +44,6 @@ function Menu() {
         </body>
     );
 }
+
 
 export default Menu;

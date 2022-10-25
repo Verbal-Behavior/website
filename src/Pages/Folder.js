@@ -1,7 +1,7 @@
 import React from 'react';
-import  './Card.css'
+import  './Folder.css'
 
-function Card() {
+function Folder() {
     return (
     <body>
         <div class="container">
@@ -52,4 +52,4 @@ function Card() {
     );
   }
   
-  export default Card;
+  export default Folder;

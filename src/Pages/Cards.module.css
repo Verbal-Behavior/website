@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;900&display=swap');
+
+body {
+  min-height: 100%;
+  background: black;
+}
+
+.container  {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  width: 600px;
+  background: #f2f2f2;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 20px 8px rgb(92, 92, 92);
+}
+
+.content {
+  position: absolute;
+  text-align: justify;
+  color: black;
+  padding: 40px;
+  font-family: 'Merriweather', serif;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+.Yes
+{
+  width: 150px;
+  height: 49px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  background-color: #ff5eac;
+  color: #fbc4e8;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 40px 0;
+  transition:all 0.5s;
+}
+
+.No
+{
+  width: 150px;
+  height: 49px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff5eac;
+  color: #fbc4e8;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 40px 0;
+  transition:all 0.5s;
+}
+ .YesNo
+ {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-25%);
+  width: 600px;
+ }
+
+
