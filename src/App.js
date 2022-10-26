@@ -8,6 +8,8 @@ import Cards from './Pages/Cards';
 import CreateCard from './Pages/CreateCard';
 import DisplayCard from './Pages/DisplayCard';
 import Menu from './Pages/Menu';
+import CreateCardPage from './Pages/CreateCardPage';
+import CreateFolderPage from './Pages/CreateFolderPage';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path='/CreateCard' element={<CreateCard />} />
           <Route path='/DisplayCard' element={<DisplayCard />} />
           <Route path='/Menu' element={<Menu />} />
+          <Route path='/CreateCardPage' element={<CreateCardPage />} />
+          <Route path='/CreateFolderPage' element={<CreateFolderPage />} />
         </Routes>
       </main>
     </div>
