@@ -1,74 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;900&display=swap');
+:root {
+  --primary: White;
+  --secondary: White;
+  --dark: #212121;
+  --light: #F3F3F3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  min-height: 100%;
-  background: black;
+  font-family: montserrat, sans-serif;
+  width: 100%;
+  min-height: 100vh;
 }
 
-.container  {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.card {
+  margin: 100px auto 0;
+  width: 600px;
   height: 400px;
-  width: 600px;
-  background: #f2f2f2;
-  overflow: hidden;
-  border-radius: 20px;
+  perspective: 1000px;
+}
+
+.card__inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
   cursor: pointer;
-  box-shadow: 0 0 20px 8px rgb(92, 92, 92);
+  position: relative;
 }
 
-.content {
+.card__inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+
+.card__face__front {
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  text-align: justify;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card__face__front h2 {
+  color: Black;
+  font-size: 32px;
+}
+
+.card__face__back {
+  background: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+  transform: rotateY(180deg);
+}
+
+.card__face__back h2 {
   color: black;
-  padding: 40px;
-  font-family: 'Merriweather', serif;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%)
+  font-size: 32px;
 }
 
-.Yes
-{
-  width: 150px;
-  height: 49px;
-  outline: none;
-  border: none;
-  border-radius: 20px;
-  background-color: #ff5eac;
-  color: #fbc4e8;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 14px;
-  margin: 40px 0;
-  transition:all 0.5s;
+.card__inner:hover {
+  transform: rotateY(180deg);
 }
-
-.No
-{
-  width: 150px;
-  height: 49px;
-  outline: none;
-  border: none;
-  border-radius: 10px;
-  background-color: #ff5eac;
-  color: #fbc4e8;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 14px;
-  margin: 40px 0;
-  transition:all 0.5s;
-}
- .YesNo
- {
-  position: absolute;
-  left: 50%;
-  top: 70%;
-  transform: translate(-25%);
-  width: 600px;
- }
-
-
