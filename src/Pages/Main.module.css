@@ -78,6 +78,27 @@ section
     overflow: hidden;
 }
 
+h1 {
+    position: relative;
+    font-size: 4rem;
+    color: black;
+    text-transform: uppercase;
+    margin-top: -200%;
+}
+h1::before
+{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: #ff5eac;
+    /*border-right: 2px solid #ff5eac;*/
+    overflow: hidden;
+    animation: animate 8s linear infinite;
+}
+
 h2
 {
     position: relative;

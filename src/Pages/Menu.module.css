@@ -19,7 +19,7 @@ body {
 }
 .container {
     position: relative;
-    width: 220px;
+    width: 320px;
     height: 70px;
     background: white;
     display: flex;
@@ -61,7 +61,7 @@ body {
     transition: 0.5s;
 }
 .container .list .content:hover .animation .icon {
-    transform: translateY(-40px);
+    transform: translateY(-50px);
 }
 .container .list .content .animation .text {
     position: absolute;

@@ -26,7 +26,7 @@ function Registration() {
 
   useEffect(() => {
     if (loading) return;
-    if (user) navigate("/Profile");
+    if (user) navigate("/Main");
   }, [user, loading]);
 
     return(

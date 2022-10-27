@@ -21,7 +21,7 @@ function Login() {
 
     useEffect(() => {
         if (loading) return;
-        if (user) navigate("/Profile");
+        if (user) navigate("/Main");
       }, [user, loading]);
     return(
 <div className= {LoginCSS.container} class="container">
