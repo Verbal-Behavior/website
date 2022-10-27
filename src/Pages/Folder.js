@@ -1,55 +1,41 @@
-import React from 'react';
-import  './Folder.css'
+import React, { useState } from 'react';
+import { SliderData } from './SliderData.js';
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
-function Folder() {
-    return (
-    <body>
-        <div class="container">
-               <div class="card">
-                   <div class="face face1">   
-                       <div class="content">   
-                       <img src="design.png"></img>
-                       <h3>Design</h3>
-                       </div>
-                   </div>
-                   <div class="face face2">   
-                       <div class="content">   
-                           <p>Name of Folder</p>
-                           <a href="#">Open Now</a>
-                       </div>   
-                   </div> 
-               </div>
-               <div class="card">
-                   <div class="face face1">   
-                       <div class="content">   
-                       <img src="design.png"></img>
-                       <h3>Design</h3>
-                       </div>
-                   </div>
-                   <div class="face face2">   
-                       <div class="content">   
-                           <p>Name of Folder</p>
-                           <a href="#">Open Now</a>
-                       </div>   
-                   </div> 
-               </div>
-               <div class="card">
-                   <div class="face face1">   
-                       <div class="content">   
-                       <img src="design.png"></img>
-                       <h3>Design</h3>
-                       </div>
-                   </div>
-                   <div class="face face2">   
-                       <div class="content">   
-                           <p>Name of Folder</p>
-                           <a href="#">Open Now</a>
-                       </div>   
-                   </div> 
-               </div>
-           </div>
-       </body>
-    );
+const Folder = ({ slides }) => {
+  const [current, setCurrent] = useState(0);
+  const length = slides.length;
+
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
+
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+
+  if (!Array.isArray(slides) || slides.length <= 0) {
+    return null;
   }
-  
-  export default Folder;
+
+  return (
+    <section className='slider'>
+      <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
+      <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />
+      {SliderData.map((slide, index) => {
+        return (
+          <div
+            className={index === current ? 'slide active' : 'slide'}
+            key={index}
+          >
+            {index === current && (
+              <img src={slide.image} alt='travel image' className='image' />
+            )}
+          </div>
+        );
+      })}
+    </section>
+  );
+};
+
+export default Folder;
