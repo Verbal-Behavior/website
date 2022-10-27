@@ -2,7 +2,9 @@ import React from 'react';
 import MenuCSS from './Menu.module.css';
 import {GoCircleSlash} from 'react-icons/go';
 import {GrAddCircle,GrInstallOption} from 'react-icons/gr';
-import { Navigate } from 'react-router-dom';
+import { IoIosFolderOpen } from "react-icons/io";
+
+import { Outlet, Link } from "react-router-dom";
 
 function Menu() {
     return (
@@ -16,7 +18,17 @@ function Menu() {
                                     <GrAddCircle />
                                 </div>
                             </div>
-                            <button className={MenuCSS.text}>Create</button>
+                            <div className={MenuCSS.text}><Link to="/CreateCardPage">Create Card</Link></div>
+                        </a>
+                    </li>
+                    <li className={MenuCSS.content}>
+                        <a className={MenuCSS.animation} href="#">
+                            <div className={MenuCSS.icon}>
+                                <div className={MenuCSS.indicator}>
+                                    <IoIosFolderOpen />
+                                </div>
+                            </div>
+                            <div className={MenuCSS.text}><Link to="/CreateFolderPage">Create Folder</Link></div>
                         </a>
                     </li>
                     <li className={MenuCSS.content}>

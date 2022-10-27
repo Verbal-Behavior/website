@@ -1,22 +1,19 @@
 import React from 'react';
 import MainCSS from './Main.module.css';
-import Folder from './Folder';
-import Menu from './Menu';
+import { Outlet, Link } from "react-router-dom";
 
-function Main() {
+function Welcome() {
     return(
 <body className= {MainCSS.body}>
         <header className= {MainCSS.header}>
             <a className= {MainCSS.a} href="#" class="ProfileIcon">ProfileIcon</a>
             <ul className= {MainCSS.ul}>
-                <li className= {MainCSS.li}><a href="#" class="active">Home</a></li>
-                <li className= {MainCSS.li}><a href="#">Profile</a></li>
-                <li className= {MainCSS.li}><a href="#">Logout</a></li>
+                <li className= {MainCSS.li}><a href="#"><Link to="/Login">Login</Link></a></li>
+                <li className= {MainCSS.li}><a href="#"><Link to="/Registration">Registration</Link></a></li>
             </ul>
         </header>
-        
     <section className= {MainCSS.section}>
-        <h2 className= {MainCSS.h2} data-text="Create">Create</h2>
+        <h1 className= {MainCSS.h1} data-text="Welcome">Welcome</h1>
         <div className= {MainCSS.planets} class="planets">
             <div className= {MainCSS.venus} id="venus"></div>
             <div className= {MainCSS.star1} id="star1"></div>
@@ -35,12 +32,9 @@ function Main() {
            <div className= {MainCSS.meteor} id="meteor"></div>
         </div>
        </div>
-    </section> 
-    <div>
-        <Folder/>
-    </div>
+    </section>
 </body>
     );
 }
-
-export default Main;
+ 
+export default Welcome;
