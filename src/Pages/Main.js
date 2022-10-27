@@ -1,8 +1,7 @@
 import React from 'react';
 import MainCSS from './Main.module.css';
-import Folder from './Folder';
 import Menu from './Menu';
-import ImageSlider from './Folder';
+import Folder from './Folder';
 import { SliderData } from './SliderData';
 
 function Main() {
@@ -19,7 +18,7 @@ function Main() {
         </header>
         
     <div>
-        return <ImageSlider slides={SliderData} />;
+        return <Folder slides={SliderData} />;
     </div>
     <footer>
     <Menu />
