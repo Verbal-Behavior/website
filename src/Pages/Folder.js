@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SliderData } from './SliderData.js';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import FolderCSS from './Folder.module.css';
 
 const Folder = ({ slides }) => {
   const [current, setCurrent] = useState(0);
@@ -19,9 +20,9 @@ const Folder = ({ slides }) => {
   }
 
   return (
-    <section className='slider'>
-      <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
-      <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />
+    <section className= {FolderCSS.slider}>
+      <FaArrowAltCircleLeft className= {FolderCSS.left_arrow} onClick={prevSlide} />
+      <FaArrowAltCircleRight className= {FolderCSS.right_arrow} onClick={nextSlide} />
       {SliderData.map((slide, index) => {
         return (
           <div
@@ -29,7 +30,7 @@ const Folder = ({ slides }) => {
             key={index}
           >
             {index === current && (
-              <img src={slide.image} alt='travel image' className='image' />
+              <img src={slide.image}/>
             )}
           </div>
         );
