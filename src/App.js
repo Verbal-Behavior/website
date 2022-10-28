@@ -26,7 +26,7 @@ function App() {
           <Route path='/CreateCard' element={<CreateCard />} />
           <Route path='/DisplayCard' element={<DisplayCard />} />
           <Route path='/Menu' element={<Menu />} />
-          <Route path='/Welcome' element={<Welcome />} />
+          <Route path='/' element={<Welcome />} />
           <Route path='/CreateCardPage' element={<CreateCardPage />} />
           <Route path='/CreateFolderPage' element={<CreateFolderPage />} />
         </Routes>
