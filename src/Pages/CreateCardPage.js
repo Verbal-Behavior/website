@@ -1,5 +1,6 @@
 import react from "react";
 import CCardCSS from './CreateCardPage.module.css';
+import { Outlet, Link } from "react-router-dom";
 
 function CreateCardPage() {
 
@@ -27,6 +28,7 @@ function CreateCardPage() {
           <option className= {CCardCSS.option}>Test Folder 2</option>
         </select>
         <button className= {CCardCSS.button}>Create</button>
+        <div><button className= {CCardCSS.button}><Link to="/Main">Home</Link></button></div>      
       </form>
     </div>
   );

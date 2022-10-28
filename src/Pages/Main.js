@@ -12,8 +12,7 @@ function Main() {
             <ul className= {MainCSS.ul}>
                 <li className= {MainCSS.li}><a href="#" class="active">Home</a></li>
                 <li className= {MainCSS.li}><a href="#">Profile</a></li>
-                <li className= {MainCSS.li}><a href="#">Login</a></li>
-                <li className= {MainCSS.li}><a href="#">Registration</a></li>
+                <li className= {MainCSS.li}><a href="#">Logout</a></li>
             </ul>
         </header>
         
