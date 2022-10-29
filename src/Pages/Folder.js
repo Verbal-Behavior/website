@@ -8,6 +8,9 @@ const Folder = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
+  const setFolderName = value => {
+    window.myGlobalVar = value;
+}
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
@@ -32,7 +35,7 @@ const Folder = ({ slides }) => {
           > 
             {index === current && (
               <Link to="/Cards">
-                {slide.name}
+                <button onClick={() => setFolderName(slide.name)}>{slide.name}</button>
               </Link>
             )}
           </div>
