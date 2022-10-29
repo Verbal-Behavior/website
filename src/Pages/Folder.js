@@ -9,7 +9,7 @@ const Folder = ({ slides }) => {
   const length = slides.length;
 
   const setFolderName = value => {
-    window.myGlobalVar = value;
+    window.folderName = value;
 }
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);

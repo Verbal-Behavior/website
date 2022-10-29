@@ -8,7 +8,7 @@ import {auth} from "../Firebase";
 function Cards() {
 	const [user, loading, error] = useAuthState(auth);
 	const navigate = useNavigate();
-	const name = window.myGlobalVar;
+	const name = window.folderName;
   
 	useEffect(() => {
 		if (loading) return;
