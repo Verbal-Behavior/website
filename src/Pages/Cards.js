@@ -1,7 +1,19 @@
 import React from 'react';
 import CardsCSS from './Cards.module.css'
+import { useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import {auth} from "../Firebase";
 
 function Cards() {
+	const [user, loading, error] = useAuthState(auth);
+	const navigate = useNavigate();
+  
+	useEffect(() => {
+		if (loading) return;
+		if (!user) return navigate("/");
+  
+	}, [user, loading])
     return (
 <body>
 	<div className= {CardsCSS.card}>

@@ -21,11 +21,11 @@ function App() {
           <Route path='/Registration' element={<Registration />} />
           <Route path='/Profile' element={<Profile />} />
           <Route path='/Main' element={<Main />} />
-          <Route path='/Folder' element={<Folder />} />
+          {/* <Route path='/Folder' element={<Folder />} /> */}
           <Route path='/Cards' element={<Cards />} />
           <Route path='/CreateCard' element={<CreateCard />} />
           <Route path='/DisplayCard' element={<DisplayCard />} />
-          <Route path='/Menu' element={<Menu />} />
+          {/* <Route path='/Menu' element={<Menu />} /> */}
           <Route path='/' element={<Welcome />} />
           <Route path='/CreateCardPage' element={<CreateCardPage />} />
           <Route path='/CreateFolderPage' element={<CreateFolderPage />} />

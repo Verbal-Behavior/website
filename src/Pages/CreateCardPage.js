@@ -1,8 +1,20 @@
 import react from "react";
 import CCardCSS from './CreateCardPage.module.css';
 import { Outlet, Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import {auth} from "../Firebase";
 
 function CreateCardPage() {
+  const [user, loading, error] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+      if (loading) return;
+      if (!user) return navigate("/");
+
+  }, [user, loading])
 
   return (
     <div>
