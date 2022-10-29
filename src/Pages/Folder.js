@@ -1,33 +1,42 @@
 import React, { useState } from 'react';
-import { SliderData } from './SliderData.js';
+//import { SliderData } from './SliderData.js';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import FolderCSS from './Folder.module.css';
 import { Link } from "react-router-dom";
+import { collection, doc, getDocs, query, where } from "firebase/firestore";
+import { db, auth } from "../Firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
-const Folder = ({ slides }) => {
+function Folder() {
+  const [user] = useAuthState(auth);
+  const [folders, setFolders] = useState([]);
+  const folderCollectionRef = collection(db, "folders");
   const [current, setCurrent] = useState(0);
-  const length = slides.length;
 
   const setFolderName = value => {
     window.folderName = value;
 }
   const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
+    setCurrent(current === folders.length - 1 ? 0 : current + 1);
   };
 
   const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
+    setCurrent(current === 0 ? folders.length - 1 : current - 1);
   };
 
-  if (!Array.isArray(slides) || slides.length <= 0) {
-    return null;
+
+  const getFlashcards = async () => {
+      const q = query(folderCollectionRef, where("uid", "==", user?.uid))
+      const data = await getDocs(folderCollectionRef);
+      setFolders(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
   }
+  getFlashcards();
 
   return (
     <section className= {FolderCSS.slider}>
       <FaArrowAltCircleLeft className= {FolderCSS.left_arrow} onClick={prevSlide} />
       <FaArrowAltCircleRight className= {FolderCSS.right_arrow} onClick={nextSlide} />
-      {SliderData.map((slide, index) => {
+      {folders.map((folder, index) => {
         return (
           <div
             className={index === current ? 'slide active' : 'slide'}
@@ -35,7 +44,7 @@ const Folder = ({ slides }) => {
           > 
             {index === current && (
               <Link to="/Cards">
-                <button onClick={() => setFolderName(slide.name)}>{slide.name}</button>
+                <button onClick={() => setFolderName(folder.name)}>{folder.name}</button>
               </Link>
             )}
           </div>

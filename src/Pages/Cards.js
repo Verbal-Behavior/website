@@ -23,7 +23,7 @@ function Cards() {
 				<h2 className= {CardsCSS.h2}>Test Text</h2>
 			</div>
 			<div className= {CardsCSS.card__face__back}>
-            <h2 className= {CardsCSS.h2}>Test Text</h2>
+            <h2 className= {CardsCSS.h2}>{name}</h2>
 			</div>
 		</div>
 	</div>
