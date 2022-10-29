@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { SliderData } from './SliderData.js';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import FolderCSS from './Folder.module.css';
+import { Link } from "react-router-dom";
 
 const Folder = ({ slides }) => {
   const [current, setCurrent] = useState(0);
@@ -28,9 +29,11 @@ const Folder = ({ slides }) => {
           <div
             className={index === current ? 'slide active' : 'slide'}
             key={index}
-          >
+          > 
             {index === current && (
-              <img src={slide.image}/>
+              <Link to="/Cards">
+                {slide.name}
+              </Link>
             )}
           </div>
         );
