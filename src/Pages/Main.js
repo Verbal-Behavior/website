@@ -6,7 +6,7 @@ import { SliderData } from './SliderData';
 import { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import {auth} from "../Firebase";
+import {auth, logout} from "../Firebase";
 
 function Main() {
     const [user, loading, error] = useAuthState(auth);
@@ -25,7 +25,7 @@ function Main() {
                 <ul className= {MainCSS.ul}>
                     <li className= {MainCSS.li}><a href="#" class="active">Home</a></li>
                     <li className= {MainCSS.li}><a href="#">Profile</a></li>
-                    <li className= {MainCSS.li}><a href="#">Logout</a></li>
+                    <li className= {MainCSS.li}><a href="#" onClick={logout}>Logout</a></li>
                 </ul>
             </header>
             
