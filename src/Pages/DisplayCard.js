@@ -18,7 +18,7 @@ function DisplayCard() {
         if (loading) return;
         if (!user) return navigate("/Login");
         const getFlashcards = async () => {
-            const q = query(flashcardsCollectionRef, where("userId", "==", user?.uid))
+            const q = query(flashcardsCollectionRef, where("uid", "==", user?.uid))
             const data = await getDocs(q);
             setFlashcards(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
             //console.log(data);

@@ -30,7 +30,7 @@ function CreateCardPage() {
         frontText: frontText, 
         backText: backText, 
         folderName: folderName, 
-        userId: user?.uid
+        uid: user?.uid
         }
       )
   };
