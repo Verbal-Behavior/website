@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import FolderCSS from './Folder.module.css';
 import { Link } from "react-router-dom";
-import { collection, doc, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db, auth } from "../Firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -24,13 +24,13 @@ function Folder() {
     setCurrent(current === 0 ? folders.length - 1 : current - 1);
   };
 
-
-  const getFlashcards = async () => {
+  const getFolders = async () => {
       const q = query(folderCollectionRef, where("uid", "==", user?.uid))
-      const data = await getDocs(folderCollectionRef);
+      const data = await getDocs(q);
       setFolders(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
   }
-  getFlashcards();
+
+  getFolders();
 
   return (
     <section className= {FolderCSS.slider}>
