@@ -86,8 +86,10 @@ function CreateCardPage() {
           
         </select>
         
+        <div>
+        <button className= {CCardCSS.button}><Link to="/Main">Home</Link></button>
         <button className= {CCardCSS.button} onClick={createFlashcard}>Create</button>
-        <div><button className= {CCardCSS.button}><Link to="/Main">Home</Link></button></div>
+        </div>
         {/* </form>       */}
 
     </div>

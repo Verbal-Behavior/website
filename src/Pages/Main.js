@@ -31,9 +31,9 @@ function Main() {
         <div>
           <Folder />
         </div>
-        <footer>
+        <div>
           <Menu />
-        </footer>
+        </div>
     </body>
     );
 }

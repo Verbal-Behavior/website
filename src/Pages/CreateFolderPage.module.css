@@ -51,7 +51,8 @@ color: #ff5eac;
 text-transform: uppercase;
 font-weight: 600;
 font-size: 20px;
-margin: 20px 0;
+margin: 20px 20px;
+margin-left: 0px;
 transition:all 0.5s;
 }
 

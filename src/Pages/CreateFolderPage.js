@@ -41,8 +41,11 @@ function CreateFolderPage() {
               setFolderName(event.target.value);
           }}
         />
+        <div>
+        <button className={CFolderCSS.button}><Link to="/Main">Home</Link></button>
         <button className= {CFolderCSS.button} onClick={createFolder}>Create</button>
-        <div><button className={CFolderCSS.button}><Link to="/Main">Home</Link></button></div>    
+        </div>
+        
       {/* </form> */}
     </div>
   );
