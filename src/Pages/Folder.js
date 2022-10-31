@@ -44,7 +44,7 @@ function Folder() {
           > 
             {index === current && (
               <Link to="/Cards">
-                <button onClick={() => setFolderName(folder.name)}>{folder.name}</button>
+                <button className={FolderCSS.button} onClick={() => setFolderName(folder.name)}>{folder.name}</button>
               </Link>
             )}
           </div>

@@ -44,3 +44,20 @@
     transition-duration: 1s;
     transform: scale(1.08);
   }
+
+  .button {
+    width: 150px;
+    height: 49px;
+    outline: none;
+    border: none;
+    border-radius: 48;
+    background-color: black;
+    color: #ff5eac;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 20px 20px;
+    margin-left: 0px;
+    transition:all 0.5s; 
+    cursor: pointer;
+  }
