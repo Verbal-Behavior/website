@@ -18,7 +18,7 @@ function Main() {
     }, [user, loading])
 
     return(
-    <body className= {MainCSS.body}>
+    <div className= {MainCSS.body}>
             <header className= {MainCSS.header}>
                 <a className= {MainCSS.a} href="#" class="ProfileIcon">ProfileIcon</a>
                 <ul className= {MainCSS.ul}>
@@ -31,10 +31,12 @@ function Main() {
         <div>
           <Folder />
         </div>
-        <div>
+        
+        <menu className= {MainCSS.Menu}>
           <Menu />
-        </div>
-    </body>
+        </menu>
+        
+    </div>
     );
 }
 

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-* {
+.body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -11,12 +11,7 @@
     --bgc: linear-gradient(black,#ff5eac);
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
+
 .container {
     position: relative;
     width: 320px;

@@ -8,7 +8,7 @@ import { Outlet, Link } from "react-router-dom";
 
 function Menu() {
     return (
-        <body className={MenuCSS.body}>
+        <div className= {MenuCSS.body}>
             <div className={MenuCSS.container}>
                 <ul className={MenuCSS.list}>
                     <li className={MenuCSS.content}>
@@ -53,7 +53,7 @@ function Menu() {
                     </li>
                 </ul>
             </div>
-        </body>
+            </div>
     );
 }
 
