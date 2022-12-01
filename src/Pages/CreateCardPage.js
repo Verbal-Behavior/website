@@ -14,6 +14,9 @@ import 'reactjs-popup/dist/index.css';
 //color imports
 import Block from '@uiw/react-color-block';
 
+//font imports
+import FontPicker from "font-picker-react";
+
 
 function CreateCardPage() {
   const [hex, setHex] = useState("#fff");
@@ -26,6 +29,9 @@ function CreateCardPage() {
   const [frontText, setFrontText] = useState("");
   const [backText, setBackText] = useState("");
   const [folderName, setFolderName] = useState("");
+
+  //Const for Fonts
+  const [activeFontFamily, setFont] = useState("Open Sans");
 
   const getFolders = async () => {
     const q = query(folderCollectionRef, where("uid", "==", user?.uid))
@@ -58,6 +64,8 @@ function CreateCardPage() {
 
   }, [user, loading])
 
+
+  
   return (
     <div>
     <div className= {CCardCSS.create}>
@@ -88,13 +96,6 @@ function CreateCardPage() {
           }}
         >
 
-        {/* fonts */}
-
-
-
-        <select id = 'select' onChange = "return fontChange();">
-	      </select> 
-
           <option className= {CCardCSS.option}></option>
         {folders.map((folder, index) => {
           return (
@@ -104,19 +105,55 @@ function CreateCardPage() {
           
         </select>
         
+        {/*Home Button Button*/}
         <div>
         <button className= {CCardCSS.button}><Link to="/Main">Home</Link></button>
-        <button className= {CCardCSS.button} onClick={createFlashcard}>Create</button>
+
+        {/*Create Button and PopUp*/}
+  <Popup
+    trigger={<button className= {CCardCSS.button} onClick={createFlashcard}>Create</button>}
+    modal
+    nested
+  >
+{close => (
+      <div className="modal">
+        <div className="header"> You Just Created A Card </div>
+        <div className="content">
+
+        <div>
+        <div className="actions">
+          <button
+            className="button"
+            onClick={() => {
+              console.log('Exit');
+              close();
+            }}
+          >
+            Exit
+          </button>
+      </div>
+       </div>
+        </div>
+         </div>
+    )}
+  </Popup>
         
         {/*color*/}
         <div style={{ background: hex, marginTop: 30, padding: 10 }}>
         {hex}
         </div>
+
         {/*Text Color*/}
         <div style={{ background: hex2, marginTop: 30, padding: 10 }}>
         {hex2}
         </div>
-        
+
+        {/*Test Text for Font*/}
+        <div className= {CCardCSS.Textfont}>
+        <p className="apply-font">This is you test sentence, how does it look?</p>
+        </div>
+
+
   <Popup
     trigger={<button className={CCardCSS.button}> Color </button>}
     modal
@@ -124,7 +161,7 @@ function CreateCardPage() {
   >
 {close => (
       <div className="modal">
-        <div className="header"> Title </div>
+        <div className="header"> Choose Color </div>
         <div className="content">
         <div>
     <>
@@ -140,11 +177,11 @@ function CreateCardPage() {
           <button
             className="button"
             onClick={() => {
-              console.log('modal closed ');
+              console.log('Exit');
               close();
             }}
           >
-            close modal
+            Exit
           </button>
         </div>
       </div>
@@ -160,7 +197,7 @@ function CreateCardPage() {
   >
 {close => (
       <div className="modal">
-        <div className="header"> Title </div>
+        <div className="header"> Choose Font Color </div>
         <div className="content">
         <div>
     <>
@@ -176,20 +213,63 @@ function CreateCardPage() {
           <button
             className="button"
             onClick={() => {
-              console.log('modal closed ');
+              console.log('Exit');
               close();
             }}
           >
-            close modal
+            Exit
           </button>
         </div>
       </div>
     )}
   </Popup>
   
+  <Popup
+    trigger={<button className={CCardCSS.button}> Font </button>}
+    modal
+    nested
+  >
+{close => (
+      <div className="modal">
+        <div className="header"> Choose Font </div>
+        <div className="content">
+        <div>
+    <>
+      {/*Font dropdown In the popup*/}
+
+      <div>
+        <FontPicker
+          apiKey="AIzaSyCk5zrYl8LSTgkUC1S_b5m1AKhtuy95sjM"
+          activeFontFamily={activeFontFamily}
+          onChange={(nextFont) => setFont(nextFont.family)}
+        />
+      </div>
+
+      {/*Test Text for Font*/}
+
+      <p className="apply-font">This is you test sentence, how does it look?</p>
+
+    </>
+        </div>
+        </div>
+        <div className="actions">
+
+          <button
+            className="button"
+            onClick={() => {
+              console.log('Exit');
+              close();
+            }}
+          >
+            Exit
+          </button>
+        </div>
+      </div>
+    )}
+  </Popup>
         </div>
     </div>
   );
 }
- 
+
 export default CreateCardPage;
