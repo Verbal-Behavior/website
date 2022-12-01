@@ -34,6 +34,7 @@ function CreateCard() {
 
     return (
       <div className="create">
+      
         <input 
             placeholder="Front Text" 
             onChange={(event) => {
@@ -53,6 +54,7 @@ function CreateCard() {
             }}
         />
         <button onClick={createFlashcard}>Create Flashcard</button>
+        <button2>Color</button2>
       </div>
     );
   }

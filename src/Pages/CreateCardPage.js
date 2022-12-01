@@ -7,7 +7,17 @@ import { useNavigate } from "react-router-dom";
 import {db, auth} from "../Firebase";
 import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
 
+//popup imports
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
+//color imports
+import Block from '@uiw/react-color-block';
+
+
 function CreateCardPage() {
+  const [hex, setHex] = useState("#fff");
+  const [hex2, setHex2] = useState("#fff");
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
   const [folders, setFolders] = useState([]);
@@ -77,6 +87,14 @@ function CreateCardPage() {
               setFolderName(event.target.value);
           }}
         >
+
+        {/* fonts */}
+
+
+
+        <select id = 'select' onChange = "return fontChange();">
+	      </select> 
+
           <option className= {CCardCSS.option}></option>
         {folders.map((folder, index) => {
           return (
@@ -89,9 +107,87 @@ function CreateCardPage() {
         <div>
         <button className= {CCardCSS.button}><Link to="/Main">Home</Link></button>
         <button className= {CCardCSS.button} onClick={createFlashcard}>Create</button>
+        
+        {/*color*/}
+        <div style={{ background: hex, marginTop: 30, padding: 10 }}>
+        {hex}
         </div>
-        {/* </form>       */}
+        {/*Text Color*/}
+        <div style={{ background: hex2, marginTop: 30, padding: 10 }}>
+        {hex2}
+        </div>
+        
+  <Popup
+    trigger={<button className={CCardCSS.button}> Color </button>}
+    modal
+    nested
+  >
+{close => (
+      <div className="modal">
+        <div className="header"> Title </div>
+        <div className="content">
+        <div>
+    <>
+      <Block
+        color={hex}
+        onChange={(color) => setHex(color.hex)}
+      />
+    </>
+        </div>
+        </div>
+        <div className="actions">
 
+          <button
+            className="button"
+            onClick={() => {
+              console.log('modal closed ');
+              close();
+            }}
+          >
+            close modal
+          </button>
+        </div>
+      </div>
+    )}
+  </Popup>
+
+
+  {/*Text Color Pick*/}
+  <Popup
+    trigger={<button className={CCardCSS.button}> Text Color </button>}
+    modal
+    nested
+  >
+{close => (
+      <div className="modal">
+        <div className="header"> Title </div>
+        <div className="content">
+        <div>
+    <>
+      <Block
+        color={hex2}
+        onChange={(color) => setHex2(color.hex)}
+      />
+    </>
+        </div>
+        </div>
+        <div className="actions">
+
+          <button
+            className="button"
+            onClick={() => {
+              console.log('modal closed ');
+              close();
+            }}
+          >
+            close modal
+          </button>
+        </div>
+      </div>
+    )}
+  </Popup>
+  
+        </div>
     </div>
   );
 }
