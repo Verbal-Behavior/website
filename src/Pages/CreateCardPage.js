@@ -6,6 +6,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import {db, auth} from "../Firebase";
 import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
+import { storageRef } from "../Firebase";
+import { listAll } from "firebase/storage";
 
 //popup imports
 import Popup from 'reactjs-popup';
@@ -30,6 +32,23 @@ function CreateCardPage() {
   const [backText, setBackText] = useState("");
   const [folderName, setFolderName] = useState("");
 
+const [images, setImages] = useState([]);
+const [imageName, setImageName] = useState("");
+
+// List All Files
+const listItem = () => {
+  listAll(storageRef)
+    .then(res => {
+      res.items.forEach((item) => {
+        setImages(arr => [...arr, item.name]);
+      })
+    })
+    .catch(err => {
+      alert(err.message);
+    })
+}
+console.log(images);
+console.log(imageName);
   //Const for Fonts
   const [activeFontFamily, setFont] = useState("Open Sans");
 
@@ -61,6 +80,7 @@ function CreateCardPage() {
       if (loading) return;
       if (!user) return navigate("/");
       getFolders();
+      listItem();
 
   }, [user, loading])
 
@@ -71,6 +91,26 @@ function CreateCardPage() {
     <div className= {CCardCSS.create}>
       <h2 className= {CCardCSS.h2}>Create a Card</h2>
     </div>
+
+    <label className= {CCardCSS.label}>Choose Image:</label>
+        <select className= {CCardCSS.select}
+            onChange={(event) => {
+              setImageName(event.target.value);
+          }}
+        >
+
+        <select id = 'select' onChange = "return fontChange();">
+	      </select> 
+
+          <option className= {CCardCSS.option}></option>
+        {images.map((image, index) => {
+          return (
+            <option className= {CCardCSS.option} key={index}>{image}</option>
+          );
+        })}
+          
+        </select>
+
       {/* <form className= {CCardCSS.form}> */}
         <label className= {CCardCSS.label} >Card Front:</label>
 

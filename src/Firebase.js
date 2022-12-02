@@ -19,6 +19,7 @@ import {
   where,
   addDoc,
 } from "firebase/firestore";
+import { getStorage, ref } from "firebase/storage";
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
@@ -38,6 +39,8 @@ const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 const githubProvider = new GithubAuthProvider();
 const twitterProvider = new TwitterAuthProvider();
+const storage = getStorage();
+const storageRef = ref(storage);
 
 const signInWithGoogle = async () => {
   try {
@@ -169,5 +172,6 @@ export {
   registerWithEmailAndPassword,
   //sendPasswordReset,
   logout,
+  storageRef
 };
 
