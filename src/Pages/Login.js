@@ -10,6 +10,7 @@ import {
   signInWithFacebook,
   signInWithGithub,
   signInWithTwitter,
+  sendPasswordReset,
 } from "../Firebase";
 
 
@@ -51,6 +52,12 @@ function Login() {
                 class="btn solid"
                 onClick={() => logInWithUsernameAndPassword(email, password)}
                 value="Login"
+            />
+            <input className= {LoginCSS.btn}
+                type="button"
+                class="btn solid"
+                onClick={() => sendPasswordReset(email)}
+                value="Reset Password"
             />
             <div className= {LoginCSS.socialmedia} class="social-media">
                 <a className= {LoginCSS.socialicon} href="#" class="social-icon">

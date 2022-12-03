@@ -165,6 +165,7 @@ const logout = () => {
 export {
   auth,
   db,
+  storage,
   signInWithGoogle,
   signInWithFacebook,
   signInWithGithub,

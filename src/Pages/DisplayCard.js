@@ -1,9 +1,8 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { collection, doc, getDocs, query, where } from "firebase/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import {db, auth} from "../Firebase";
+import { db, auth } from "../Firebase";
 
 function DisplayCard() {
     const [flashcards, setFlashcards] = useState([]);

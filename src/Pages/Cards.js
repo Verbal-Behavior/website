@@ -1,9 +1,8 @@
-import React from 'react';
-import CardsCSS from './Cards.module.css'
-import { useEffect, useState } from "react";
+import CardsCSS from './CardFolderImage.module.css'
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import {db, auth} from "../Firebase";
+import  {db, auth } from "../Firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
 function Cards() {

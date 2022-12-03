@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 //import { SliderData } from './SliderData.js';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
-import FolderCSS from './Folder.module.css';
+import FolderCSS from './CardFolderImage.module.css';
 import { Link } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db, auth } from "../Firebase";

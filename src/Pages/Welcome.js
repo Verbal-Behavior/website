@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import MainCSS from './Main.module.css';
-import { Outlet, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
-import {auth} from "../Firebase";
+import { auth } from "../Firebase";
 
 function Welcome() {
     const [user, loading, error] = useAuthState(auth);

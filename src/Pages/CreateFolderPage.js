@@ -1,10 +1,8 @@
-import react from "react";
-import CFolderCSS from './CreateFolderPage.module.css';
-import { Outlet, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import CFolderCSS from './CardFolderImage.module.css';
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
-import {auth, db} from "../Firebase";
+import { auth, db } from "../Firebase";
 import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
 
 function CreateFolderPage() {
@@ -30,7 +28,7 @@ function CreateFolderPage() {
   }, [user, loading])
 
   return (
-    <div>
+    <div className= {CFolderCSS.body}>
     <div className= {CFolderCSS.create}>
       <h2 className= {CFolderCSS.h2}>Create a Folder</h2>
     </div>

@@ -1,12 +1,9 @@
-import react from "react";
-import CCardCSS from './CreateCardPage.module.css';
-import { Outlet, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import CCardCSS from './CardFolderImage.module.css';
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
-import {db, auth} from "../Firebase";
+import { db, auth, storageRef } from "../Firebase";
 import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
-import { storageRef } from "../Firebase";
 import { listAll } from "firebase/storage";
 
 //popup imports
@@ -87,7 +84,7 @@ console.log(imageName);
 
   
   return (
-    <div>
+    <div className= {CCardCSS.body}>
     <div className= {CCardCSS.create}>
       <h2 className= {CCardCSS.h2}>Create a Card</h2>
     </div>

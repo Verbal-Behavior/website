@@ -7,10 +7,10 @@ import Folder from './Pages/Folder';
 import Cards from './Pages/Cards';
 import CreateCard from './Pages/CreateCard';
 import DisplayCard from './Pages/DisplayCard';
-import Menu from './Pages/Menu';
 import Welcome from './Pages/Welcome';
 import CreateCardPage from './Pages/CreateCardPage';
 import CreateFolderPage from './Pages/CreateFolderPage';
+import Image from './Pages/Image';
 
 function App() {
   return (
@@ -25,10 +25,10 @@ function App() {
           <Route path='/Cards' element={<Cards />} />
           <Route path='/CreateCard' element={<CreateCard />} />
           <Route path='/DisplayCard' element={<DisplayCard />} />
-          {/* <Route path='/Menu' element={<Menu />} /> */}
           <Route path='/' element={<Welcome />} />
           <Route path='/CreateCardPage' element={<CreateCardPage />} />
           <Route path='/CreateFolderPage' element={<CreateFolderPage />} />
+          <Route path='/ImageUpload' element={<Image />} />
         </Routes>
       </main>
     </div>
