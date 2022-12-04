@@ -4,8 +4,14 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import  {db, auth, storageRef } from "../Firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import { color } from '@uiw/react-color';
+
+//color imports
+import Block from '@uiw/react-color-block';
 
 function Cards() {
+	const [hex, setHex] = useState("#fff");
+ 	const [hex2, setHex2] = useState("#fff");
 	const [flashcards, setFlashcards] = useState([]);
 	const [user, loading, error] = useAuthState(auth);
 	const flashcardsCollectionRef = collection(db, "flashcards");
@@ -35,9 +41,16 @@ function Cards() {
 					<div className= {CardsCSS.card__face__front}>
 					  <img src={flashcard.imageURL} height="200px" width="200px"></img>
 					  <h2 className= {CardsCSS.h2}>{flashcard.frontText}</h2>
+					  <div style={{ background: hex, color: hex2 }}>
+        				{hex}
+       					</div>
 					</div>
 					<div className= {CardsCSS.card__face__back}>
 					  <h2 className= {CardsCSS.h2}>{flashcard.backText}</h2>
+					  <div style={{ background: hex, color: hex2 }}>
+					  
+        				{hex}
+        			  </div>
 					</div>
 				  </div>
 				</div>

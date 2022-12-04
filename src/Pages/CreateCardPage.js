@@ -11,6 +11,7 @@ import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
+
 //color imports
 import Block from '@uiw/react-color-block';
 
@@ -19,6 +20,8 @@ import FontPicker from "font-picker-react";
 
 
 function CreateCardPage() {
+  const [open, setOpen] = useState(false);
+  const closeModal = () => setOpen(false);
   const [hex, setHex] = useState("#fff");
   const [hex2, setHex2] = useState("#fff");
   const [user, loading, error] = useAuthState(auth);
@@ -155,42 +158,26 @@ console.log(imageName);
         {/*Home Button Button*/}
         <div>
         <button className= {CCardCSS.button}><Link to="/Main">Home</Link></button>
-        <button className= {CCardCSS.button} onClick={createFlashcard}>RCreate</button>
+
+        <button className= {CCardCSS.button} onClick={() => {
+          setOpen(o => !o);
+          createFlashcard();
+          }} >Create</button>
 
         {/*Create Button and PopUp*/}
-  <Popup
-    trigger={<button className= {CCardCSS.button} onClick={createFlashcard}>Create</button>}
-    modal
-    nested
-  >
-{close => (
-      <div className="modal">
-        <div className="header"> You Just Created A Card </div>
-        <div className="content">
-
-        <div>
-        <div className="actions">
-          <button
-            className="button"
-            onClick={() => {
-              console.log('Exit');
-              close();
-            }}
-          >
-            Exit
-          </button>
-      </div>
-       </div>
-        </div>
-         </div>
-    )}
-  </Popup>
+        <Popup open={open} closeOnDocumentClick onClose={closeModal}>
+          <div className="modal">
+            <button className= {CCardCSS.button} onClick={closeModal}>Close</button>
+              You Just Made a Card
+          </div>
+        </Popup>
+    
         
         {/*color*/}
         <div style={{ background: hex, marginTop: 30, padding: 10 }}>
         {hex}
         </div>
-
+ 
         {/*Text Color*/}
         <div style={{ background: hex2, marginTop: 30, padding: 10 }}>
         {hex2}
