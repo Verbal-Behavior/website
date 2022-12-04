@@ -40,11 +40,11 @@ function Cards() {
 				  <div className= {CardsCSS.card__inner}>
 					<div style={{background: flashcard.bgcolor}} className= {CardsCSS.card__face__front}>
 					  <img src={flashcard.imageURL} height="200px" width="200px"></img>
-					  <h2 style={{color: flashcard.txtcolor}} className= {CardsCSS.h2}>{flashcard.frontText}</h2>
+					  <h2 style={{color: flashcard.txtcolor}} className= {"apply-font"}>{flashcard.frontText}</h2>
 
 					</div>
 					<div style={{background: flashcard.bgcolor}} className= {CardsCSS.card__face__back}>
-					<h2 style={{color: flashcard.txtcolor}} className= {CardsCSS.h2}>{flashcard.backText}</h2>
+					<h2 style={{color: flashcard.txtcolor}} className= {"apply-font"}>{flashcard.backText}</h2>
 					</div>
 				  </div>
 				</div>
