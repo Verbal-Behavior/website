@@ -62,6 +62,8 @@ console.log(imageName);
         frontText: frontText, 
         backText: backText, 
         folderName: folderName, 
+        txtcolor: hex2,
+        bgcolor: hex,
         uid: user?.uid
         }
       )
@@ -145,6 +147,7 @@ console.log(imageName);
         {/*Home Button Button*/}
         <div>
         <button className= {CCardCSS.button}><Link to="/Main">Home</Link></button>
+        <button className= {CCardCSS.button} onClick={createFlashcard}>RCreate</button>
 
         {/*Create Button and PopUp*/}
   <Popup
