@@ -33,7 +33,7 @@ function Cards() {
 				<div className= {CardsCSS.card}>
 				  <div className= {CardsCSS.card__inner}>
 					<div className= {CardsCSS.card__face__front}>
-					  <img src="https://firebasestorage.googleapis.com/v0/b/flashcard-app-32ebc.appspot.com/o/images%2Fapple.png?alt=media&token=701b2c96-3353-4133-87e6-eeb6d1bb9915" height="200px" width="200px"></img>
+					  <img src={flashcard.imageURL} height="200px" width="200px"></img>
 					  <h2 className= {CardsCSS.h2}>{flashcard.frontText}</h2>
 					</div>
 					<div className= {CardsCSS.card__face__back}>

@@ -33,6 +33,7 @@ function CreateCardPage() {
 const [images, setImages] = useState([]);
 const [imageName, setImageName] = useState("");
 const storage = getStorage();
+const imagesRef = ref(storage, 'images/' + imageName);
 const imageRef = ref(storage, 'images/' + imageName);
 const url = getDownloadURL(imageRef).then(function(url) {
     imagePath = url;});
@@ -40,7 +41,7 @@ var imagePath = "";
 
 // List All Files
 const listItem = () => {
-  listAll(storageRef)
+  listAll(imagesRef)
     .then(res => {
       res.items.forEach((item) => {
         setImages(arr => [...arr, item.name]);
