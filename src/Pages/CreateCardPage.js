@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { db, auth, storageRef } from "../Firebase";
 import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
 import { listAll } from "firebase/storage";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 //popup imports
 import Popup from 'reactjs-popup';
@@ -31,6 +32,11 @@ function CreateCardPage() {
 
 const [images, setImages] = useState([]);
 const [imageName, setImageName] = useState("");
+const storage = getStorage();
+const imageRef = ref(storage, 'images/' + imageName);
+const url = getDownloadURL(imageRef).then(function(url) {
+    imagePath = url;});
+var imagePath = "";
 
 // List All Files
 const listItem = () => {
@@ -65,6 +71,7 @@ console.log(imageName);
         txtcolor: hex2,
         bgcolor: hex,
         image: imageName,
+        imageURL: imagePath,
         uid: user?.uid
         }
       )
@@ -81,10 +88,9 @@ console.log(imageName);
       if (!user) return navigate("/");
       getFolders();
       listItem();
+      
 
   }, [user, loading])
-
-
   
   return (
     <div className= {CCardCSS.body}>
