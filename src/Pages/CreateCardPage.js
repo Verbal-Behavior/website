@@ -64,6 +64,7 @@ console.log(imageName);
         folderName: folderName, 
         txtcolor: hex2,
         bgcolor: hex,
+        image: imageName,
         uid: user?.uid
         }
       )

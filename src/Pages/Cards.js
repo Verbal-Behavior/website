@@ -2,7 +2,7 @@ import CardsCSS from './CardFolderImage.module.css'
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import  {db, auth } from "../Firebase";
+import  {db, auth, storageRef } from "../Firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
 function Cards() {
@@ -33,6 +33,7 @@ function Cards() {
 				<div className= {CardsCSS.card}>
 				  <div className= {CardsCSS.card__inner}>
 					<div className= {CardsCSS.card__face__front}>
+					  <img src="https://firebasestorage.googleapis.com/v0/b/flashcard-app-32ebc.appspot.com/o/apple.png?alt=media&token=9c49850b-9163-42bd-a2a6-613b8e4ee75d" height="200px" width="200px"></img>
 					  <h2 className= {CardsCSS.h2}>{flashcard.frontText}</h2>
 					</div>
 					<div className= {CardsCSS.card__face__back}>
