@@ -38,19 +38,13 @@ function Cards() {
 			return (
 				<div className= {CardsCSS.card}>
 				  <div className= {CardsCSS.card__inner}>
-					<div className= {CardsCSS.card__face__front}>
+					<div style={{background: flashcard.bgcolor}} className= {CardsCSS.card__face__front}>
 					  <img src={flashcard.imageURL} height="200px" width="200px"></img>
-					  <h2 className= {CardsCSS.h2}>{flashcard.frontText}</h2>
-					  <div style={{ background: hex, color: hex2 }}>
-        				{hex}
-       					</div>
+					  <h2 style={{color: flashcard.txtcolor}} className= {CardsCSS.h2}>{flashcard.frontText}</h2>
+
 					</div>
-					<div className= {CardsCSS.card__face__back}>
-					  <h2 className= {CardsCSS.h2}>{flashcard.backText}</h2>
-					  <div style={{ background: hex, color: hex2 }}>
-					  
-        				{hex}
-        			  </div>
+					<div style={{background: flashcard.bgcolor}} className= {CardsCSS.card__face__back}>
+					<h2 style={{color: flashcard.txtcolor}} className= {CardsCSS.h2}>{flashcard.backText}</h2>
 					</div>
 				  </div>
 				</div>
