@@ -32,8 +32,8 @@ function CreateFolderPage() {
     <div className= {CFolderCSS.create}>
       <h2 className= {CFolderCSS.h2}>Create a Folder</h2>
     </div>
-      {/* <form className= {CFolderCSS.form}> */}
-        <label className= {CFolderCSS.label}>Folder Name:</label>
+        <form className= {CFolderCSS.form}>
+        <h2 className= {CFolderCSS.label}>Folder Name:</h2>
         <input className= {CFolderCSS.input} 
             onChange={(event) => {
               setFolderName(event.target.value);
@@ -44,7 +44,7 @@ function CreateFolderPage() {
         <button className= {CFolderCSS.button} onClick={createFolder}>Create</button>
         </div>
         
-      {/* </form> */}
+      </form>
     </div>
   );
 }

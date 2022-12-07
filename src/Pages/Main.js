@@ -21,7 +21,7 @@ function Main() {
     return(
     <div className= {MainCSS.body}>
             <header className= {MainCSS.header}>
-                <a className= {MainCSS.a} href="#" class="ProfileIcon">ProfileIcon</a>
+                <a className= {MainCSS.a}></a>
                 <ul className= {MainCSS.ul}>
                     <li className= {MainCSS.li}><a href="#" class="active">Home</a></li>
                     <li className= {MainCSS.li}><a href="#">Profile</a></li>

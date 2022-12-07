@@ -102,27 +102,8 @@ console.log(imageName);
       <h2 className= {CCardCSS.h2}>Create a Card</h2>
     </div>
 
-    <label className= {CCardCSS.label}>Choose Image:</label>
-        <select className= {CCardCSS.select}
-            onChange={(event) => {
-              setImageName(event.target.value);
-          }}
-        >
-
-        <select id = 'select' onChange = "return fontChange();">
-	      </select> 
-
-          <option className= {CCardCSS.option}></option>
-        {images.map((image, index) => {
-          return (
-            <option className= {CCardCSS.option} key={index}>{image}</option>
-          );
-        })}
-          
-        </select>
-
-      {/* <form className= {CCardCSS.form}> */}
-        <label className= {CCardCSS.label} >Card Front:</label>
+        <form className= {CCardCSS.form}>
+        <h2 className= {CCardCSS.label} >Card Front:</h2>
 
         <input className= {CCardCSS.input} 
           placeholder="Front Text" 
@@ -131,7 +112,7 @@ console.log(imageName);
           }}
         />
 
-        <label className= {CCardCSS.label}>Card Back:</label>
+        <h2 className= {CCardCSS.label}>Card Back:</h2>
         <input className= {CCardCSS.input}
           placeholder="Back Text" 
           onChange={(event) => {
@@ -139,7 +120,7 @@ console.log(imageName);
           }}
         />
 
-        <label className= {CCardCSS.label}>Choose Folder:</label>
+        <h2 className= {CCardCSS.label}>Choose Folder:</h2>
         <select className= {CCardCSS.select}
             onChange={(event) => {
               setFolderName(event.target.value);
@@ -154,15 +135,37 @@ console.log(imageName);
         })}
           
         </select>
+
+        <h2 className= {CCardCSS.label}>Choose Image:</h2>
+        <select className= {CCardCSS.select}
+            onChange={(event) => {
+              setImageName(event.target.value);
+          }}
+        >
+
+        <select id = 'select' onChange = "return fontChange();">
+	      </select> 
+
+          <option className= {CCardCSS.option}></option>
+        {images.map((image, index) => {
+          return (
+            <option className= {CCardCSS.option} key={index}>{image}</option>
+          );
+        })} 
+        </select>
+        </form>
         
         {/*Home Button Button*/}
         <div>
+        <div className= {CCardCSS.buttons}>
         <button className= {CCardCSS.button}><Link to="/Main">Home</Link></button>
 
         <button className= {CCardCSS.button} onClick={() => {
           setOpen(o => !o);
           createFlashcard();
           }} >Create</button>
+
+        <button className= {CCardCSS.button}>Click Me</button>
 
         {/*Create Button and PopUp*/}
         <Popup open={open} closeOnDocumentClick onClose={closeModal}>
@@ -171,24 +174,28 @@ console.log(imageName);
               You Just Made a Card
           </div>
         </Popup>
-    
-        
-        {/*color*/}
-        <div style={{ background: hex, marginTop: 30, padding: 10 }}>
-        {hex}
         </div>
+        </div>
+        {/*color*/}
+        <label className= {CCardCSS.HexCenter}>
+        <div className= {CCardCSS.Hex} style={{ background: hex}}>
+        BackGround</div>
+        </label>
  
         {/*Text Color*/}
-        <div style={{ background: hex2, marginTop: 30, padding: 10 }}>
-        {hex2}
-        </div>
+        <label className= {CCardCSS.HexCenter}>
+        <div className= {CCardCSS.Hex} style={{ background: hex2}} >
+        Text Color</div>
+        </label>
 
         {/*Test Text for Font*/}
+        <label className= {CCardCSS.FontChangeCenter}>
         <div className= {CCardCSS.Textfont}>
         <p className="apply-font">This is you test sentence, how does it look?</p>
         </div>
+        </label>
 
-
+        <div className= {CCardCSS.buttons}>
   <Popup
     trigger={<button className={CCardCSS.button}> Color </button>}
     modal
@@ -302,8 +309,8 @@ console.log(imageName);
       </div>
     )}
   </Popup>
+            </div>
         </div>
-    </div>
   );
 }
 
