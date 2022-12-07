@@ -6,21 +6,23 @@ import ImageCSS from './CardFolderImage.module.css';
 import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 
 function ImageUpload() {
-    const [user, loading, error] = useAuthState(auth);
-    const navigate = useNavigate();
-    const [image , setImage] = useState(null);
-    const [imageList , setImageList] = useState([]);
-    const imageListRef = ref(storage, "images/");
-    const upload = () => {
-      if(image == null)
-        return;
-      const imageRef = ref(storage, `images/${image.name}`);
-      uploadBytes(imageRef, image).then(() =>{alert("Uploaded Image")});
+  const [user, loading, error] = useAuthState(auth);
+  const navigate = useNavigate();
+  const [image , setImage] = useState(null);
+  const [imageList , setImageList] = useState([]);
+  const imageListRef = ref(storage, `${user?.uid}/`);
+  const upload = async () => {
+    if(image == null)
+      return;
+    const imageRef = ref(storage, `${user?.uid}/${image.name}`);
+    await uploadBytes(imageRef, image).then(() =>{alert("Uploaded Image")});
 
-      window.location.reload();
-    }
+    window.location.reload();
+  }
 
     useEffect(() => {
+      if (loading) return;
+      if (!user) return navigate("/");
         listAll(imageListRef).then(response => {
             response.items.forEach(item => {
                 getDownloadURL(item).then(url => {
@@ -28,13 +30,7 @@ function ImageUpload() {
                 });
             });
         });
-    }, []);
-
-    /*useEffect(() => {
-        if (loading) return;
-        if (!user) return navigate("/");
-        ImageUpload();
-    }, [user, loading]);*/
+    }, [user, loading]);
       
       return (
         <body className = {ImageCSS.body}>

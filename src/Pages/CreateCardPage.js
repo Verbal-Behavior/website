@@ -36,8 +36,8 @@ function CreateCardPage() {
 const [images, setImages] = useState([]);
 const [imageName, setImageName] = useState("");
 const storage = getStorage();
-const imagesRef = ref(storage, 'images/' + imageName);
-const imageRef = ref(storage, 'images/' + imageName);
+const imagesRef = ref(storage, `${user?.uid}/${imageName}`);
+const imageRef = ref(storage, `${user?.uid}/${imageName}`);
 const url = getDownloadURL(imageRef).then(function(url) {
     imagePath = url;});
 var imagePath = "";
