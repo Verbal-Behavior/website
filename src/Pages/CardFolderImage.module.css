@@ -4,7 +4,7 @@
 {
     min-height: 100vh;
     overflow-x: hidden;
-    background-color: #f75ca7;
+    background: linear-gradient(black,#ff5eac);
 }
 
 .imageUpload {
@@ -45,11 +45,19 @@
     color: black;
     margin-bottom: 10px;
 }
-
+.img {
+    display: inline-block;
+    text-align: center;
+    object-fit: contain;
+    max-width: 400px;
+    max-height: 200px;
+}
 .h2 {
     font-size: 80px;
-    color: black;
-    margin-bottom: 10px;
+    max-width: 400px;
+    text-align: center;
+    display: block;
+    flex-wrap: wrap;
 }
 
 .input {
@@ -142,6 +150,12 @@
     transform: scale(1.08);
   }
 
+  .button__container {
+    text-align: center;
+    justify-content: center;
+    position: relative;
+  }
+
 .button {
     width: 150px;
     height: 49px;
@@ -155,7 +169,7 @@
     font-size: 20px;
     margin: 20px 20px;
     margin-left: 0px;
-    transition:all 0.5s;
+    transition:all 0.5s ease-in-out;
 }
 
 .button:hover {
@@ -194,14 +208,33 @@
     --dark: #212121;
     --light: #F3F3F3;
     }
-      
+
+@keyframes swell {
+    0% {
+        transform: scale(.6);
+        opacity: .5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 .card {
-    margin: 100px auto 0;
-    width: 600px;
-    height: 400px;
-    perspective: 1000px;
+        margin: 100px auto 0;
+        width: 600px;
+        height: 400px;
+        perspective: 1000px;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        cursor: pointer;
+        position: relative;
+        animation: swell 1s;
     }
       
+    .card:hover {
+        transform: rotateY(180deg)
+    }
+    
 .card__inner {
     width: 100%;
     height: 100%;
@@ -211,16 +244,13 @@
     position: relative;
     }
       
-.card__inner.is-flipped {
-    transform: rotateY(180deg);
-    }
-      
       
 .card__face__front {
     background: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -232,8 +262,10 @@
     }
       
 .card__face__front h2 {
-    color: Black;
-    font-size: 32px;
+    font-size: 30px; 
+    text-align: center;
+    display: inline-block;
+    flex-wrap: wrap;
     }
       
 .card__face__back {
@@ -253,10 +285,8 @@
     }
       
 .card__face__back h2 {
-    color: black;
     font-size: 32px;
+    display: inline-block;
+    text-align: center;
     }
-      
-.card__inner:hover {
-    transform: rotateY(180deg);
-    }
+    
