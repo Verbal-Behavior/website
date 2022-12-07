@@ -4,7 +4,7 @@
 {
     min-height: 100vh;
     overflow-x: hidden;
-    background: linear-gradient(black,#ff5eac);
+    background: #ff5eac;
 }
 
 .imageUpload {
