@@ -28,6 +28,14 @@
     object-fit: cover;
 }
 
+.img {
+    display: inline-block;
+    text-align: center;
+    object-fit: contain;
+    max-width: 400px;
+    max-height: 200px;
+}
+
 .create {
     max-width: 800px;
     margin: 0 auto;
@@ -81,6 +89,13 @@
     font-size: 80px;
     color: black;
     border-bottom: 2px solid black;
+}
+.p {
+    font-size: 40px;
+    max-width: 400px;
+    text-align: center;
+    display: block;
+    flex-wrap: wrap;
 }
 
 .input {

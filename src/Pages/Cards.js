@@ -25,12 +25,9 @@ function Cards() {
 	const navigate = useNavigate();
 	const name = window.folderName;
 	const [current, setCurrent] = useState(0);
+	const flashcardArray = Object.keys(flashcards);
 
-	const nextSlideYes = () => {
-		setCurrent(current === flashcards.length - 1 ? 0 : current + 1);
-	  };
-	  
-	  const nextSlideNo = () => {
+	const nextSlide = () => {
 		setCurrent(current === flashcards.length - 1 ? 0 : current + 1);
 	  };
 
@@ -61,10 +58,10 @@ function Cards() {
 				  <div className= {CardsCSS.card__inner}>
 					<div style={{background: flashcard.bgcolor}} className= {CardsCSS.card__face__front}>	
 					  <img className = {CardsCSS.img} src={flashcard.imageURL}></img>
-					  <h2 style={{color: flashcard.txtcolor}} className= {CardsCSS.h2}>{flashcard.frontText}</h2>
+					  <p style={{color: flashcard.txtcolor}} className= {CardsCSS.p}>{flashcard.frontText}</p>
 					</div>
 					<div style={{background: flashcard.bgcolor}} className= {CardsCSS.card__face__back}>
-					<h2 style={{color: flashcard.txtcolor}} className= {"apply-font"}>{flashcard.backText}</h2>
+					<p style={{color: flashcard.txtcolor}} className= {CardsCSS.p}>{flashcard.backText}</p>
 					</div>
 				  </div>
 				</div>
@@ -77,7 +74,7 @@ function Cards() {
 			<div>
 			<button className= {CardsCSS.button} onClick={() => {
          		 setOpen(o => !o);
-          		nextSlideYes();
+          		nextSlide();
           	}}>YES</button>	
 			<Popup open={open} closeOnDocumentClick onClose={closeModal}>
           		<div className="modal">
@@ -87,7 +84,7 @@ function Cards() {
         	</Popup>
 			<button className= {CardsCSS.button} onClick={() => {
          		 setOpenNo(o => !o);
-          		 nextSlideNo();
+          		 nextSlide();
           	}}>NO</button>	
 			<Popup open={openNo} closeOnDocumentClick onClose={closeModalNo}>
           		<div className="modal">
