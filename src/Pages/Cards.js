@@ -17,15 +17,12 @@ function Cards() {
 	const [openNo, setOpenNo] = useState(false);
   	const closeModal = () => setOpen(false);
 	const closeModalNo = () => setOpenNo(false);
-	const [hex, setHex] = useState("#fff");
- 	const [hex2, setHex2] = useState("#fff");
 	const [flashcards, setFlashcards] = useState([]);
 	const [user, loading, error] = useAuthState(auth);
 	const flashcardsCollectionRef = collection(db, "flashcards");
 	const navigate = useNavigate();
 	const name = window.folderName;
 	const [current, setCurrent] = useState(0);
-	const flashcardArray = Object.keys(flashcards);
 
 	const nextSlide = () => {
 		setCurrent(current === flashcards.length - 1 ? 0 : current + 1);
@@ -70,6 +67,8 @@ function Cards() {
 			);
 		})}
 		<script src="main.js"></script>
+
+		{/* popups for right and wrong*/}
 		<div className = {CardsCSS.button__container}>
 			<div>
 			<button className= {CardsCSS.button} onClick={() => {
