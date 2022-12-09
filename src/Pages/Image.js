@@ -11,6 +11,8 @@ function ImageUpload() {
   const [image , setImage] = useState(null);
   const [imageList , setImageList] = useState([]);
   const imageListRef = ref(storage, `${user?.uid}/`);
+
+  //Custom Function to Upload to Database
   const upload = async () => {
     if(image == null)
       return;
@@ -19,10 +21,12 @@ function ImageUpload() {
 
     window.location.reload();
   }
-
+   
     useEffect(() => {
       if (loading) return;
       if (!user) return navigate("/");
+      
+      //Custom To Render User Images on Screen
         listAll(imageListRef).then(response => {
             response.items.forEach(item => {
                 getDownloadURL(item).then(url => {

@@ -33,16 +33,20 @@ function CreateCardPage() {
   const [backText, setBackText] = useState("");
   const [folderName, setFolderName] = useState("");
 
+//Image Storage Variables
 const [images, setImages] = useState([]);
 const [imageName, setImageName] = useState("");
 const storage = getStorage();
 const imagesRef = ref(storage, `${user?.uid}/${imageName}`);
 const imageRef = ref(storage, `${user?.uid}/${imageName}`);
+
+//Custom Function to retrieve the Image Path
 const url = getDownloadURL(imageRef).then(function(url) {
     imagePath = url;});
+
 var imagePath = "";
 
-// List All Files
+// Custom Function to List all Files
 const listItem = () => {
   listAll(imagesRef)
     .then(res => {
@@ -54,8 +58,7 @@ const listItem = () => {
       alert(err.message);
     })
 }
-console.log(images);
-console.log(imageName);
+
   //Const for Fonts
   const [activeFontFamily, setFont] = useState("Open Sans");
 
@@ -65,6 +68,7 @@ console.log(imageName);
     setFolders(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
   };
 
+  //Custom Function to Create Flashcard & Store to DB
   const createFlashcard = async () => {
     await addDoc(
         flashcardsCollectionRef, 
@@ -81,12 +85,7 @@ console.log(imageName);
       )
   };
 
-  function logdata() {
-    console.log(frontText); 
-    console.log(backText);
-    console.log(folderName);
-  };
-
+  //Custom Function to Check User & Load Images/Folders  
   useEffect(() => {
       if (loading) return;
       if (!user) return navigate("/");
@@ -147,6 +146,8 @@ console.log(imageName);
 	      </select> 
 
           <option className= {CCardCSS.option}></option>
+        
+        {/* CUSTOM FUNCTION TO MAP IMAGES TO DROP DOWN */}
         {images.map((image, index) => {
           return (
             <option className= {CCardCSS.option} key={index}>{image}</option>
