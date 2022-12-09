@@ -38,15 +38,20 @@ function ImageUpload() {
       
       return (
         <body className = {ImageCSS.body}>
+          <div className= {ImageCSS.create}>
+      <h2 className= {ImageCSS.h2}>Images</h2>
+    </div>
         <div className = {ImageCSS.imageUpload}>
             <div className = {ImageCSS.library}>
                 {imageList.map((url) => {
                     return <img src = {url} className = {ImageCSS.images} />;
                     })}
             </div>
+            <div className = {ImageCSS.div_center}>
             <button className = {ImageCSS.button}><Link to="/Main">Home</Link></button>
             <input className = {ImageCSS.inputButton} type = "file" onChange = {(e) => {setImage(e.target.files[0])}}/>
             <button className = {ImageCSS.button} onClick = {upload} >Upload</button>
+            </div>
         </div>
         </body>
       );

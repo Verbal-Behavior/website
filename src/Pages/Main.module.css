@@ -71,12 +71,12 @@ section
     overflow: hidden;
 }
 
-h1 {
+.h1 {
     position: relative;
     font-size: 4rem;
     color: black;
     text-transform: uppercase;
-    margin-top: -200%;
+    margin-top: 0%;
 }
 h1::before
 {
@@ -194,4 +194,78 @@ h2::before
     border-radius: 50%;
     border:7px solid var(--bgc);
     transition: 0.5s;
+}
+
+.sun{
+    width: 15rem;
+    height: 15rem;
+    background: radial-gradient( #F17022 50%, #fcb100 200%);
+    border-radius: 50%;
+    bottom: 10%;
+    right: 45%;
+    box-shadow: 0px 0px 70px #ffb60d4f;
+}
+
+.star1,
+.star2,
+.star3,
+.star4,
+.star5,
+.star6,
+.star7,
+.star8,
+.star9
+{
+    position: absolute;
+    border-radius: 50%;
+    width: .5rem;
+    height: .5rem;
+    background-color: rgb(208, 224, 255);
+    animation: venus .1s ease 0s infinite normal forwards;
+
+}
+
+.star1{
+    top: 30%;
+    left: 20%;
+}
+
+.star2{
+    top: 36%;
+    left: 12%;
+}
+
+.star3{
+    top: 45%;
+    left: 29%;
+}
+
+.star4{
+    top: 21%;
+    left: 23%;
+}
+
+.star5{
+    top: 55%;
+    left: 24%;
+}
+
+.star6{
+    top: 10%;
+    right: 17%;
+}
+
+.star7{
+    top: 16%;
+    right: 57%;
+}
+
+.star8{
+    top: 45%;
+    right: 29%;
+}
+
+.star9{
+    top: 55%;
+    right: 24%;
 }
