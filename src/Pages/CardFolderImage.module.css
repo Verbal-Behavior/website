@@ -18,7 +18,7 @@
 .library {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(6, 12vh);
+    grid-template-rows: repeat(3, 12vh);
     grid-gap: 15px;
 }
 
@@ -332,4 +332,8 @@ a:link {
     display: inline-block;
     text-align: center;
     }
+
+.div_center {
+    margin: auto;
+}
     
